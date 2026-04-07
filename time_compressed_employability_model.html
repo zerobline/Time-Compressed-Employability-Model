@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time-Compressed Employability Model</title>
+<style>
+  :root {
+    --font: 'Georgia', serif;
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --text-primary: #1a1a18;
+    --text-secondary: #5a5a56;
+    --text-muted: #9a9a94;
+    --teal: #0F6E56;
+    --teal-light: #1D9E75;
+    --amber: #BA7517;
+    --red: #A32D2D;
+    --red-mid: #E24B4A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111110;
+      --card: #1c1c1a;
+      --border: rgba(255,255,255,0.08);
+      --text-primary: #e8e6e0;
+      --text-secondary: #a0a09a;
+      --text-muted: #686864;
+      --teal: #2ECFA0;
+      --teal-light: #5DCAA5;
+      --amber: #EF9F27;
+      --red: #E24B4A;
+      --red-mid: #F09595;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    font-family: 'Georgia', serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .page {
+    width: 100%;
+    max-width: 820px;
+  }
+  .header {
+    margin-bottom: 2rem;
+  }
+  .kicker {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 560px;
+    font-style: italic;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .chart-wrap {
+    width: 100%;
+  }
+  svg text {
+    font-family: 'Georgia', serif;
+  }
+  .formula-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .formula-block {
+    flex: 1;
+    min-width: 200px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  .formula-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+  .formula-eq {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .formula-eq em {
+    font-style: normal;
+    color: var(--teal);
+  }
+  .implications {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+  .impl-item {
+    padding: 0.75rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .impl-item strong {
+    display: block;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    font-weight: normal;
+  }
+  .takeaway {
+    border-left: 2px solid var(--teal);
+    padding: 0.75rem 1.25rem;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 1.5rem;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="kicker">Strategic Framework</div>
+    <h1>Time-Compressed Employability Model</h1>
+    <p class="subtitle">Employability derived from formal education is time-limited and structurally compressed by pre-market knowledge lag and post-graduation skill decay.</p>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap">
+      <svg width="100%" viewBox="0 0 680 520" role="img">
+        <title>Time-Compressed Employability Model</title>
+        <desc>A dual-curve chart showing how market skill relevance peaks before graduation, while the delivered skillset lags behind, creating a relevance gap at entry and a compressed effective employability window.</desc>
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <linearGradient id="gapGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E24B4A" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#E24B4A" stop-opacity="0.04"/>
+          </linearGradient>
+          <linearGradient id="eewGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1D9E75" stop-opacity="0.14"/>
+            <stop offset="100%" stop-color="#1D9E75" stop-opacity="0.03"/>
+          </linearGradient>
+        </defs>
+
+        <!-- EEW shaded region -->
+        <polygon points="390,74 545,260 545,370 390,370" fill="url(#eewGrad)"/>
+
+        <!-- Gap shading between curves -->
+        <path d="M100,320 C160,240 220,80 310,68 C330,66 350,70 370,80 L390,97 L390,180 C370,185 350,195 330,210 C280,240 200,300 100,340 Z" fill="url(#gapGrad)"/>
+
+        <!-- Axes -->
+        <line x1="60" y1="360" x2="645" y2="360" stroke="#73726c" stroke-width="1" opacity="0.25" marker-end="url(#arrow)"/>
+        <line x1="60" y1="380" x2="60" y2="30" stroke="#73726c" stroke-width="1" opacity="0.25" marker-end="url(#arrow)"/>
+
+        <!-- Axis labels -->
+        <text font-family="Georgia,serif" font-size="12" fill="#9a9a94" x="648" y="364">Time</text>
+        <text font-family="Georgia,serif" font-size="12" fill="#9a9a94" x="14" y="100" text-anchor="middle" transform="rotate(-90,14,200)">Skill relevance</text>
+
+        <!-- Market Skill Relevance curve (teal) -->
+        <path d="M100,340 C140,260 190,140 280,70 C330,44 380,64 420,110 C480,180 530,270 580,340"
+              fill="none" stroke="#0F6E56" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Education Output curve (amber dashed) -->
+        <path d="M220,360 C250,320 290,230 390,180 C430,163 460,168 490,190 C530,225 570,290 620,355"
+              fill="none" stroke="#BA7517" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 4"/>
+
+        <!-- Vertical markers -->
+        <line x1="100" y1="45" x2="100" y2="360" stroke="#73726c" stroke-width="0.75" stroke-dasharray="4 4" opacity="0.35"/>
+        <line x1="220" y1="45" x2="220" y2="360" stroke="#73726c" stroke-width="0.75" stroke-dasharray="4 4" opacity="0.35"/>
+        <line x1="390" y1="45" x2="390" y2="360" stroke="#E24B4A" stroke-width="1" stroke-dasharray="5 4" opacity="0.7"/>
+
+        <!-- Delay A brace -->
+        <line x1="100" y1="378" x2="220" y2="378" stroke="#73726c" stroke-width="0.75" opacity="0.4"/>
+        <line x1="100" y1="373" x2="100" y2="383" stroke="#73726c" stroke-width="0.75" opacity="0.4"/>
+        <line x1="220" y1="373" x2="220" y2="383" stroke="#73726c" stroke-width="0.75" opacity="0.4"/>
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="160" y="400" text-anchor="middle">Curriculum lag (A)</text>
+
+        <!-- Delay B brace -->
+        <line x1="220" y1="393" x2="390" y2="393" stroke="#73726c" stroke-width="0.75" opacity="0.4"/>
+        <line x1="220" y1="388" x2="220" y2="398" stroke="#73726c" stroke-width="0.75" opacity="0.4"/>
+        <line x1="390" y1="388" x2="390" y2="398" stroke="#73726c" stroke-width="0.75" opacity="0.4"/>
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="305" y="415" text-anchor="middle">Study duration (B)</text>
+
+        <!-- EEW brace -->
+        <line x1="390" y1="378" x2="580" y2="378" stroke="#0F6E56" stroke-width="0.75" opacity="0.5"/>
+        <line x1="390" y1="373" x2="390" y2="383" stroke="#0F6E56" stroke-width="0.75" opacity="0.5"/>
+        <line x1="580" y1="373" x2="580" y2="383" stroke="#0F6E56" stroke-width="0.75" opacity="0.5"/>
+        <text font-family="Georgia,serif" font-size="11" fill="#0F6E56" x="485" y="400" text-anchor="middle">Effective window (EEW)</text>
+
+        <!-- Vertical marker labels -->
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="100" y="42" text-anchor="middle">Market need</text>
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="100" y="54" text-anchor="middle">emerges</text>
+
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="220" y="42" text-anchor="middle">Curriculum</text>
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="220" y="54" text-anchor="middle">adoption</text>
+
+        <text font-family="Georgia,serif" font-size="11" fill="#A32D2D" x="390" y="42" text-anchor="middle">Graduation /</text>
+        <text font-family="Georgia,serif" font-size="11" fill="#A32D2D" x="390" y="54" text-anchor="middle">workforce entry</text>
+
+        <!-- Relevance gap callout -->
+        <line x1="391" y1="128" x2="460" y2="115" stroke="#E24B4A" stroke-width="0.75" stroke-dasharray="3 3" opacity="0.7"/>
+        <text font-family="Georgia,serif" font-size="11" fill="#A32D2D" x="464" y="112">Relevance gap</text>
+        <text font-family="Georgia,serif" font-size="11" fill="#A32D2D" x="464" y="124">at entry</text>
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="464" y="143">Skills already</text>
+        <text font-family="Georgia,serif" font-size="11" fill="#9a9a94" x="464" y="155">partially outdated</text>
+
+        <!-- Legend -->
+        <line x1="64" y1="446" x2="96" y2="446" stroke="#0F6E56" stroke-width="2.5" stroke-linecap="round"/>
+        <text font-family="Georgia,serif" font-size="12" fill="#5a5a56" x="102" y="450">Market skill relevance</text>
+
+        <line x1="64" y1="466" x2="96" y2="466" stroke="#BA7517" stroke-width="2.5" stroke-dasharray="8 4" stroke-linecap="round"/>
+        <text font-family="Georgia,serif" font-size="12" fill="#5a5a56" x="102" y="470">Delivered skillset (education output)</text>
+
+        <rect x="64" y="478" width="22" height="10" rx="2" fill="#E24B4A" opacity="0.2"/>
+        <rect x="64" y="478" width="22" height="10" rx="2" fill="none" stroke="#E24B4A" stroke-width="0.5" opacity="0.4"/>
+        <text font-family="Georgia,serif" font-size="12" fill="#5a5a56" x="102" y="487">Relevance gap</text>
+
+        <rect x="248" y="478" width="22" height="10" rx="2" fill="#1D9E75" opacity="0.15"/>
+        <rect x="248" y="478" width="22" height="10" rx="2" fill="none" stroke="#1D9E75" stroke-width="0.5" opacity="0.4"/>
+        <text font-family="Georgia,serif" font-size="12" fill="#5a5a56" x="278" y="487">Effective employability window (EEW)</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="formula-row">
+    <div class="formula-block">
+      <div class="formula-label">Core equation</div>
+      <div class="formula-eq"><em>EEW</em> = Total Skill Lifespan − (A + B)</div>
+    </div>
+    <div class="formula-block">
+      <div class="formula-label">Value curve</div>
+      <div class="formula-eq">Skill Value(t) = Peak − Decay × (t − t₀)<br><span style="font-size:12px;color:#9a9a94">where t₀ = A + B</span></div>
+    </div>
+  </div>
+
+  <div class="implications">
+    <div class="impl-item">
+      <strong>Finding 1</strong>
+      Skills are partially obsolete at the moment of workforce entry
+    </div>
+    <div class="impl-item">
+      <strong>Finding 2</strong>
+      Faster-changing industries experience stronger compression
+    </div>
+    <div class="impl-item">
+      <strong>Finding 3</strong>
+      Value shifts toward continuous and real-time learning systems
+    </div>
+  </div>
+
+  <div class="takeaway">
+    The value of education is not only eroded over time — it is already diminished before it is applied.
+  </div>
+</div>
+</body>
+</html>
