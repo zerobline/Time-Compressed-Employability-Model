@@ -2,7 +2,7 @@
 
 A two-part analytical framework examining why formal education systematically underdelivers on skill relevance at graduation — and why the trajectory after entry depends entirely on the nature of the skills acquired.
 
-**[→ View the live report](https://[your-username].github.io/[your-repo-name]/)**
+**[→ View the live report](https://zerobline.github.io/Time-Compressed-Employability-Model/)**
 
 ---
 
@@ -157,4 +157,4 @@ Pull requests for corrections to the analytical framing or prose are also welcom
 
 *Framework developed 2025. Report design and visualisations produced with Claude (Anthropic).*
 
-https://zerobline.github.io/Time-Compressed-Employability-Model/
+
